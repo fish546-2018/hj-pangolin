@@ -1,0 +1,54 @@
+---
+title: "Running blast"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Setting up blast
+
+Define bldir to the blast bin folder:
+```{r}
+bldir = "/Applications/ncbi-blast-2.7.1+/bin/"
+Sys.setenv(BLDIR = bldir)
+```
+
+Check that path variable is working:
+```{bash}
+$BLDIR/blastx -h
+```
+## Check the database and query files
+
+Check the number of sequences in the blast database files:
+```{bash}
+grep "^>" ./blastdb/uniprot_sprot.fasta | wc -l
+```
+Check the number of sequences in the query fasta file:
+```{bash}
+grep -c ">" ./data/Ab_4denovo_CLC6_a.fa
+```
+
+## Running blastx:
+
+<!-- ```{bash} -->
+<!-- $BLDIR/blastx \ -->
+<!-- -query ./data/Ab_4denovo_CLC6_a.fa \ -->
+<!-- -db ./blastdb/uniprot_sprot_r2018_10_11  \ -->
+<!-- -out ./analyses/Ab_4-uniprot_blastx_rmd.tab \ -->
+<!-- -evalue 1E-20 \ -->
+<!-- -num_threads 4 \ -->
+<!-- -max_target_seqs 1 \ -->
+<!-- -outfmt 6 -->```
+
+Check that a .tab is being created:
+```{bash}
+ls analyses
+```
+
+Check length of file:
+```{bash}
+wc -l analyses/Ab_4-uniprot_blastx_rmd.tab
+```
+
