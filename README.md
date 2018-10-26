@@ -31,4 +31,5 @@ Bash and python scripts used to run analyses on Mox.
 
 **Week 5:** Run ```FASTQC``` on raw sequences files using GNU parallel to learn how to split up commands
 
-![pangolin](https://farm5.staticflickr.com/4421/35769436014_4e879dcea6_z_d.jpg)  Adam Tusk / CC BY 2.0
+![pangolin](https://farm5.staticflickr.com/4421/35769436014_4e879dcea6_z_d.jpg)  
+[Adam Tusk](https://www.flickr.com/photos/148468630@N02/35769436014) / CC BY 2.0
