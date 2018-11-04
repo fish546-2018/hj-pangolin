@@ -24,12 +24,17 @@ Jupyter notebooks used for analyses.
 [**scripts**](https://github.com/fish546-2018/hj-pangolin/tree/master/scripts)  
 Bash and python scripts used to run analyses on Mox.
 
+[**analyses**]
+Results and intermediate files from analysis. 
+
 
 #### Project Timeline
 
 **Week 4:** Set up project directory and organization for running analyses on Mox.
 
 **Week 5:** Run ```FASTQC``` on raw sequences files using GNU parallel to learn how to split up commands
+
+**Week 6:** Index reference genome and align reads using BWA
 
 ![pangolin](https://farm5.staticflickr.com/4421/35769436014_4e879dcea6_z_d.jpg)  
 [Adam Tusk](https://www.flickr.com/photos/148468630@N02/35769436014) / CC BY 2.0
