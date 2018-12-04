@@ -14,6 +14,8 @@ Create a well documented and reproducible pipeline that:
 
 [**data**](https://github.com/fish546-2018/hj-pangolin/tree/master/data)  
 README and files containing information about data files. Raw data files are too big to store on Github.
+ -raw-data: contains .fastq filters
+ -reference-genome: contains downloaded reference genome .gz file
 
 [**tutorials**](https://github.com/fish546-2018/hj-pangolin/tree/master/tutorials)  
 Jupyter and R notebooks from tutorials in class.   
@@ -23,10 +25,13 @@ Jupyter and R notebooks from tutorials in class.
 Jupyter notebooks used for analyses.
 
 [**scripts**](https://github.com/fish546-2018/hj-pangolin/tree/master/scripts)  
-Bash and python scripts used to run analyses on Mox.
+Bash scripts used to run analyses on Mox.
 
 [**analyses**](https://github.com/fish546-2018/hj-pangolin/tree/master/analyses)
 Results and intermediate files from analysis.
+  -aligned-files: contains .sam and .bam files
+  -fastqc: contains `FASTQC` and `multiQC` results
+
 
 
 #### Project Timeline
@@ -41,11 +46,13 @@ Results and intermediate files from analysis.
 
 **Week 9:** Run FreeBayes on aligned bam files
 
-#### Next steps
+#### Next Steps
 
 1. Filter identified SNPs using various quality filters
 2. Identify the top most informative SNPs
 3. Use a genome-aware primer designing software to design primers around SNPs of interest
+
+
 
 ![pangolin](https://farm5.staticflickr.com/4421/35769436014_4e879dcea6_z_d.jpg)  
 [Adam Tusk](https://www.flickr.com/photos/148468630@N02/35769436014) / CC BY 2.0
