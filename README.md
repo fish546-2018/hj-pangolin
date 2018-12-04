@@ -1,7 +1,7 @@
 
 ### Developing SNPs in multiple species of pangolins for population differentiation
 
-The goal of this project is to build a reproducible pipeline that takes whole genome sequence data from pangolins and identifies single nucleotide polymorphisms (SNPs) for use in genetic assignment tests.
+The goal of this project is to build a reproducible pipeline that takes whole genome sequence data from pangolins and identifies single nucleotide polymorphisms (SNPs) between two species.
 
 
 #### Objectives
@@ -40,6 +40,12 @@ Results and intermediate files from analysis.
 **Week 7:** Run BWA on fastq files for all 10 individuals
 
 **Week 9:** Run FreeBayes on aligned bam files
+
+#### Next steps
+
+1. Filter identified SNPs using various quality filters
+2. Identify the top most informative SNPs
+3. Use a genome-aware primer designing software to design primers around SNPs of interest
 
 ![pangolin](https://farm5.staticflickr.com/4421/35769436014_4e879dcea6_z_d.jpg)  
 [Adam Tusk](https://www.flickr.com/photos/148468630@N02/35769436014) / CC BY 2.0
