@@ -40,3 +40,8 @@ sort -k3 -V scaf_length.txt > sorted_scaf_length.txt
 ```
 
 The longest scaffold is SN:NW_016527503.1 with	LN:2314370.
+
+5. Index reference file.
+```
+samtools faidx GCF_001685135.1_ManJav1.0_genomic.fna
+```
