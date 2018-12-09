@@ -8,14 +8,14 @@ The goal of this project is to build a reproducible pipeline that takes whole ge
 Create a well documented and reproducible pipeline that:
 1. Runs FASTQC to check for quality of reads
 2. Aligns fastq files to a reference genome using BWA
-3. Identifies SNPs across species using FreeBayes
+3. Identifies SNPs between species using FreeBayes and ANGSD
 
 #### Repository Structure
 
 [**data**](https://github.com/fish546-2018/hj-pangolin/tree/master/data)  
-README and files containing information about data files. Raw data files are too big to store on Github.
- -raw-data: contains .fastq filters
- -reference-genome: contains downloaded reference genome .gz file
+README and files containing information about data files. Raw data and reference genomes files are too big to store on Github.
+ - raw-data: contains .fastq.gz files
+ - reference-genome: contains downloaded reference genome .fa and .gff.gz files
 
 [**tutorials**](https://github.com/fish546-2018/hj-pangolin/tree/master/tutorials)  
 Jupyter and R notebooks from tutorials in class.   
@@ -23,6 +23,7 @@ Jupyter and R notebooks from tutorials in class.
 
 [**notebooks**](https://github.com/fish546-2018/hj-pangolin/tree/master/notebooks)  
 Jupyter notebooks used for analyses.
+  - Notebook containing md5checksum check for reference genome
 
 [**scripts**](https://github.com/fish546-2018/hj-pangolin/tree/master/scripts)  
 Bash scripts used to run analyses on Mox.
@@ -33,24 +34,25 @@ Results and intermediate files from analysis.
   -fastqc: contains `FASTQC` and `multiQC` results
 
 
-
 #### Project Timeline
 
-**Week 4:** Set up project directory and organization for running analyses on Mox.
+**Week 4:** Set up project directory and organization for running analyses on Mox
 
 **Week 5:** Run ```FASTQC``` on raw sequences files using GNU parallel to learn how to split up commands
 
-**Week 6:** Check md5sum of the downloaded reference genome and index reference genome for BWA
+**Week 6:** Check md5sum of the downloaded reference genome and index reference genome for `BWA`
 
-**Week 7:** Run BWA on fastq files for all 10 individuals
+**Week 7:** Run `BWA` on fastq files for all 10 individuals
 
-**Week 9:** Run FreeBayes on aligned bam files
+**Week 9:** Run `FreeBayes` and `ANGSD` on aligned bam files
+
+**Week 10:** Visualize the process and results of the project
 
 #### Next Steps
 
-1. Filter identified SNPs using various quality filters
-2. Identify the top most informative SNPs
+1. Filter identified SNPs using various quality filter and identify the top most informative SNPs
 3. Use a genome-aware primer designing software to design primers around SNPs of interest
+4. Sequence museum samples and re-analyze the data with full dataset
 
 
 
