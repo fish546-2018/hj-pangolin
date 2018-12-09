@@ -1,0 +1,62 @@
+---
+title: "Visualization"
+output: html_document
+---
+
+
+Histogram of scaffold length of Sunda pangolin reference genome used for the analysis.
+```{r}
+require(ggplot2)
+scaf_length <- read.table("~/Documents/Classes/bioinf/hj-pangolin/analyses/genome/temp_just_length.txt")
+qplot(scaf_length$V1, geom="histogram", bins = 100, xlab = "Length of scaffold", ylab = "Count")  + theme_bw() + scale_x_continuous(labels = comma)
+```
+
+Plotting cluster dendrogram using code from Mikhail Matz.
+```{r}
+bams=read.table("../hj-pangolin/analyses/angsd/ibs/bams")[,1] # list of bam files
+bams=sub(".bam","",bams)
+ma = as.matrix(read.table("~/Documents/Classes/bioinf/hj-pangolin/analyses/angsd/ibs/angsd-run2.1.ibsMat"))
+dimnames(ma)=list(bams,bams)
+
+ma[1:10,1:10]
+
+hc=hclust(as.dist(ma),"ave")
+plot(hc,cex=0.6) # clustering of samp
+```
+
+Performing analysis of variance using distance matrices and PCoA using code from Mikhail Matz.
+```{r}
+JAVANICA=c(1,2,3,7)
+PENTADACTLYA=c(4,5,6,8,9,10)
+species=rep("JAVANICA",length(bams))
+species[PENTADACTLYA]="PENTADACTYLA"
+
+library(vegan)
+conds=data.frame(species)
+adonis(ma~species,conds)
+
+# performing PCoA and CAP
+pp0=capscale(ma~1)
+
+axes2plot=c(1,2)  
+plot(pp0$CA$u[JAVANICA,axes2plot],pch=19,cex=2,col="#8000FF80", xlim = c(-1,0.6), ylim = c(-1,1.2))
+legend("bottomleft",legend=unique(species),pch=19,col=c("#8000FF80", "#0080FF80"),cex=1)
+points(pp0$CA$u[PENTADACTLYA,axes2plot],pch=19,cex=2,col="#0080FF80",mgp=c(2.3,1,0))
+
+```
+
+Plotting depth of SNPs as a boxplot and heatmap. 
+```{r}
+library(vcfR)
+vcf <- read.vcfR("~/Documents/Classes/bioinf/hj-pangolin/analyses/angsd/angsd-run2.1.vcf.gz", verbose = FALSE )
+dp <- extract.gt(vcf, element = "DP", as.numeric=TRUE)
+par(mar=c(12,4,4,2))
+boxplot(dp[,1:10], col=2:8, las=3)
+title(ylab = "Depth (DP)")
+
+
+rownames(dp) <- 1:nrow(dp)
+head(dp)
+heatmap.bp(dp[11001:15000,])
+```
+
