@@ -30,9 +30,9 @@ Bash scripts used to run analyses on Mox.
 
 [**analyses**](https://github.com/fish546-2018/hj-pangolin/tree/master/analyses)
 Results and intermediate files from analysis.
-  -aligned-files: contains .sam and .bam files
-  -fastqc: contains `FASTQC` and `multiQC` results
-
+  - aligned-files: contains .sam and .bam files
+  - fastqc: contains `FASTQC` and `multiQC` results
+  - genome: contains scaffold length text file
 
 #### Project Timeline
 
